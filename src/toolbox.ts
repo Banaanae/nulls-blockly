@@ -605,10 +605,6 @@ export const toolbox = {
       contents: [
         {
           kind: 'block',
-          type: 'tick',
-        },
-        {
-          kind: 'block',
           type: 'get_tick',
         },
         {
@@ -617,7 +613,35 @@ export const toolbox = {
         },
         {
           kind: 'block',
-          type: 'get_player',
+          type: 'get_location_data',
+        },
+        {
+          kind: 'block',
+          type: 'get_game_mode',
+        },
+        {
+          kind: 'block',
+          type: 'is_battle_ended',
+        },
+        {
+          kind: 'block',
+          type: 'get_obj_man',
+        },
+        {
+          kind: 'block',
+          type: 'get_map',
+        },
+        {
+          kind: 'block',
+          type: 'get_client_info',
+        },
+        {
+          kind: 'block',
+          type: 'is_intro_finished',
+        },
+        {
+          kind: 'block',
+          type: 'get_rand_int',
         },
       ]
     },

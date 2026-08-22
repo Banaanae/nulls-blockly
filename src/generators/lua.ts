@@ -5,24 +5,6 @@ export const forBlock = Object.create(null);
 
 // Server
 
-forBlock['tick'] = function (
-  block: Blockly.Block,
-  generator: Blockly.CodeGenerator,
-) {
-  const body = generator.statementToCode(block, 'CODE') || '';
-
-  const code = `function tick()\n${body}end\n`;
-  return code;
-};
-
-forBlock['get_player_count'] = function (
-  block: Blockly.Block,
-  generator: Blockly.CodeGenerator,
-) {
-  const code = `server.players`
-  return [code, Order.ATOMIC]
-}
-
 forBlock['get_tick'] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator,
@@ -31,15 +13,80 @@ forBlock['get_tick'] = function (
   return [code, Order.ATOMIC]
 }
 
-forBlock['get_player'] = function (
+forBlock['get_player_count'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server.playersCount`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['get_location_data'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server.locationData`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['get_game_mode'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server.gameMode`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['is_battle_ended'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server.isBattleEnded`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['get_obj_man'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server.objectManager`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['get_map'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server.map`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['get_client_info'] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator,
 ) {
   const index = generator.valueToCode(block, 'INDEX', Order.NONE)
-  const code = `server:get_player(${index})`
+  const code = `server:getClientInfo(${index})`
   return [code, Order.ATOMIC]
 }
 
+forBlock['is_intro_finished'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const code = `server:isIntroFinished()`
+  return [code, Order.ATOMIC]
+}
+
+forBlock['get_rand_int'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const min = generator.valueToCode(block, 'MIN', Order.NONE)
+  const max = generator.valueToCode(block, 'MAX', Order.NONE)
+  const code = `server:getRandomInt(${min}, ${max})`
+  return [code, Order.ATOMIC]
+}
 
 // Game Objects
 
