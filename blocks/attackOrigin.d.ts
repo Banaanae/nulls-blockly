@@ -1,0 +1,1 @@
+//# sourceMappingURL=attackOrigin.d.ts.map
