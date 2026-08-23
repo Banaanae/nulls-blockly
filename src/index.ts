@@ -14,10 +14,12 @@ import { logicGameObjectBlocks } from './blocks/logicGameObject';
 import { gameDataBlocks } from './blocks/gameData';
 import { serverBlocks } from './blocks/server';
 import { globalBlocks } from './blocks/global';
+import { gameObjectManagerBlocks } from './blocks/gameObjectManager';
 
 // Register the blocks and generator with Blockly
-Blockly.common.defineBlocks(globalBlocks)
+Blockly.common.defineBlocks(globalBlocks);
 Blockly.common.defineBlocks(serverBlocks);
+Blockly.common.defineBlocks(gameObjectManagerBlocks);
 Blockly.common.defineBlocks(logicGameObjectBlocks);
 Blockly.common.defineBlocks(gameDataBlocks);
 Object.assign(luaGenerator.forBlock, forBlock);

@@ -647,6 +647,36 @@ export const toolbox = {
     },
     {
       kind: 'category',
+      name: 'Manage game objects',
+      contents: [
+        {
+          kind: 'block',
+          type: 'get_obj',
+        },
+        {
+          kind: 'block',
+          type: 'add_obj',
+        },
+        {
+          kind: 'block',
+          type: 'get_characters',
+        },
+        {
+          kind: 'block',
+          type: 'get_area_effects',
+        },
+        {
+          kind: 'block',
+          type: 'get_items',
+        },
+        {
+          kind: 'block',
+          type: 'get_projectiles',
+        },
+      ]
+    },
+    {
+      kind: 'category',
       name: 'Game objects',
       contents: [
         {
