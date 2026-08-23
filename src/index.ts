@@ -10,13 +10,15 @@ import {luaGenerator} from 'blockly/lua';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
-import { gameObjectBlocks } from './blocks/gameObjects';
+import { logicGameObjectBlocks } from './blocks/logicGameObject';
 import { gameDataBlocks } from './blocks/gameData';
 import { serverBlocks } from './blocks/server';
+import { globalBlocks } from './blocks/global';
 
 // Register the blocks and generator with Blockly
-Blockly.common.defineBlocks(serverBlocks)
-Blockly.common.defineBlocks(gameObjectBlocks);
+Blockly.common.defineBlocks(globalBlocks)
+Blockly.common.defineBlocks(serverBlocks);
+Blockly.common.defineBlocks(logicGameObjectBlocks);
 Blockly.common.defineBlocks(gameDataBlocks);
 Object.assign(luaGenerator.forBlock, forBlock);
 
@@ -29,6 +31,8 @@ if (!blocklyDiv) {
   throw new Error(`div with id 'blocklyDiv' not found`);
 }
 const ws = Blockly.inject(blocklyDiv, {toolbox});
+const tick = ws.newBlock("on_tick");
+tick.setDeletable(false);
 
 const runCode = () => {
   const code = luaGenerator.workspaceToCode(ws as Blockly.Workspace);

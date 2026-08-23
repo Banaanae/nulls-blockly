@@ -66,7 +66,7 @@ const setPosition = {
   "helpUrl": ""
 };
 
-export const gameObjectBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
+export const logicGameObjectBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   createObject,
   addGameObject,
   setPosition,

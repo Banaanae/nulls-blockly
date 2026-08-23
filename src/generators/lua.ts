@@ -3,6 +3,18 @@ import * as Blockly from 'blockly/core';
 
 export const forBlock = Object.create(null);
 
+// Global
+
+forBlock['on_tick'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const body = generator.statementToCode(block, 'CODE') || '';
+
+  const code = `function tick()\n${body}end\n`;
+  return code;
+};
+
 // Server
 
 forBlock['get_tick'] = function (

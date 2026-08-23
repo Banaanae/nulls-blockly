@@ -47,12 +47,19 @@ const isBattleEnded = {
 
 const getObjectManager = {
   "type": "get_obj_man",
-  "message0": "object manager",
-  "output": "OBJECT",
-  "colour": 230,
-  "tooltip": "...",
-  "helpUrl": ""
-};
+  "tooltip": "Gets a value from the object manager.",
+  "helpUrl": "",
+  "message0": "object manager %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "METHOD"
+    }
+  ],
+  "output": null,
+  "colour": 225,
+  "inputsInline": true
+}
 
 const getMap = {
   "type": "get_map",
