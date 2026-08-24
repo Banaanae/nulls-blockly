@@ -15,6 +15,7 @@ import { gameDataBlocks } from './blocks/gameData';
 import { serverBlocks } from './blocks/server';
 import { globalBlocks } from './blocks/global';
 import { gameObjectManagerBlocks } from './blocks/gameObjectManager';
+import { helperBlocks } from './blocks/helper';
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(globalBlocks);
@@ -22,6 +23,7 @@ Blockly.common.defineBlocks(serverBlocks);
 Blockly.common.defineBlocks(gameObjectManagerBlocks);
 Blockly.common.defineBlocks(logicGameObjectBlocks);
 Blockly.common.defineBlocks(gameDataBlocks);
+Blockly.common.defineBlocks(helperBlocks)
 Object.assign(luaGenerator.forBlock, forBlock);
 
 // Set up UI elements and inject Blockly

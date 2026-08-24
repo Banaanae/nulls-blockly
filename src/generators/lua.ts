@@ -144,3 +144,26 @@ forBlock['get_data_by_name'] = function (
   const code = `server:add_data(${csvId}, ${name})\n`;
   return [code, Order.ATOMIC];
 };
+
+// Helper
+
+forBlock['lookup'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const csvId = generator.valueToCode(block, 'table', Order.NONE) || 0;
+  const name = generator.valueToCode(block, 'name', Order.NONE) || "''";
+  const code = `lookup(${csvId}, ${name})\n`;
+  return [code, Order.ATOMIC];
+};
+
+// TODO: create_object
+
+forBlock['log'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator,
+) {
+  const log = generator.valueToCode(block, 'contents', Order.NONE) || "''";
+  const code = `log(${log})\n`;
+  return [code, Order.ATOMIC];
+};

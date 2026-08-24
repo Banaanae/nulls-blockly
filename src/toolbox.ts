@@ -714,6 +714,24 @@ export const toolbox = {
       ]
     },
     {
+      kind: 'category',
+      name: 'Helpers',
+      contents: [
+        {
+          kind: 'block',
+          type: 'lookup'
+        },
+        {
+          kind: 'block',
+          type: 'create_object'
+        },
+        {
+          kind: 'block',
+          type: 'log'
+        }
+      ]
+    },
+    {
       kind: 'sep',
     },
     {
