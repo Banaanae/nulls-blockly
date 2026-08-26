@@ -37,6 +37,8 @@ if (!blocklyDiv) {
 const ws = Blockly.inject(blocklyDiv, {toolbox});
 const tick = ws.newBlock("on_tick");
 tick.setDeletable(false);
+tick.initSvg();
+tick.render();
 
 const runCode = () => {
   const code = luaGenerator.workspaceToCode(ws as Blockly.Workspace);
