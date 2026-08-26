@@ -45,6 +45,24 @@ const isBattleEnded = {
   "helpUrl": ""
 };
 
+const hasPoisonDisabled = {
+  "type": "has_poison_disabled",
+  "message0": "poison disabled?", // TODO: DROPDOWN
+  "output": "Boolean",
+  "colour": 230,
+  "tooltip": "Is the game mode poison disabled?",
+  "helpUrl": ""
+};
+
+const hasIntroSkip = {
+  "type": "has_intro_skip",
+  "message0": "poison disabled?", // TODO: DROPDOWN
+  "output": "Boolean",
+  "colour": 230,
+  "tooltip": "Skip the intro animation?",
+  "helpUrl": ""
+};
+
 const getObjectManager = {
   "type": "get_obj_man",
   "tooltip": "Gets a value from the object manager.",
@@ -124,6 +142,8 @@ export const serverBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   getLocationData,
   getGameMode,
   isBattleEnded,
+  hasPoisonDisabled,
+  hasIntroSkip,
   getObjectManager,
   getMap,
   getClientInfo,
